@@ -13,8 +13,10 @@ and open the template in the editor.
         <?php
         include("./Student.php");
         
+        //create empty array of students
         $students = array();
         
+        //create the first Student, John Doe, and add him to array
         $first = new Student();
         $first->surname = "Doe";
         $first->first_name = "John";
@@ -25,6 +27,7 @@ and open the template in the editor.
         $first->add_grade(55);
         $students['j123'] = $first;
         
+        //create a second Student, Albert Einstein, and add him to array
         $second = new Student();
         $second->surname = "Einstein";
         $second->first_name = "Albert";
@@ -36,11 +39,21 @@ and open the template in the editor.
         $second->add_grade(50);
         $students['a456'] = $second;
         
+        //create the third student, me, and add me to array
+        $third = new Student();
+        $third->surname = "Xia";
+        $third->first_name = "Alex";
+        $third->add_email('home','jxia11@bcit.ca');
+        $third->add_grade(100);
+        $students['a789'] = $third;
+        
+        //sort the students by name by alphabetical order
+        ksort($students);
+        
+        //print out the records of each student
         foreach($students as $student) {
             echo $student->to_string();
         }
-        
-        echo "Spit something out"
         ?>
     </body>
 </html>
