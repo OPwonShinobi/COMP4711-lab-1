@@ -37,7 +37,7 @@ class Student {
     }
     
     function to_string() {
-        $result = $this->first_name . " " . $this->last_name;
+        $result = $this->first_name . " " . $this->surname;
         $result .= " (" . $this->average() . ")\n";
         foreach ($this->emails as $index=>$email) {
             $result .= $index . ": " . $email;
